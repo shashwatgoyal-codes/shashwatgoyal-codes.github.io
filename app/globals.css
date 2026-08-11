@@ -328,7 +328,9 @@
   .cc-mail-l{font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--faint)}
   .cc-mail-v{font-size:15.5px;color:var(--fg);word-break:break-all}
   .cc-socials{display:flex;gap:10px;margin-top:2px}
-  .cc-soc{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:13px;border:1px solid var(--border);color:var(--muted);transition:.2s}
+  .cc-soc{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:13px;border:1px solid var(--border);color:var(--muted);transition:.2s;background:transparent;font:inherit;cursor:pointer;padding:0}
+  .copytoast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(6px);background:var(--fg);color:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.2px;padding:9px 15px;border-radius:11px;z-index:9999;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;box-shadow:0 10px 30px -8px var(--glass-shadow)}
+  .copytoast.show{opacity:1;transform:translateX(-50%) translateY(0)}
   .cc-soc:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);background:var(--accent-dim)}
   .cc-soc svg{width:19px;height:19px}
   .cc-foot{text-align:center;font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:26px}

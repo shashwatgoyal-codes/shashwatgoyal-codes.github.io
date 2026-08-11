@@ -225,3 +225,35 @@
     (function tick(){p=(p+step)%tot;el.innerHTML=renderHole(toks,p,gap,tot);setTimeout(tick,50);})();
   });
 })();
+/* Discord username -> copy to clipboard with toast */
+(function(){
+  var els=document.querySelectorAll("[data-discord]");
+  if(!els.length)return;
+  var toast;
+  function showToast(msg){
+    if(!toast){toast=document.createElement("div");toast.className="copytoast";document.body.appendChild(toast);}
+    toast.textContent=msg;
+    toast.classList.remove("show");
+    void toast.offsetWidth;
+    toast.classList.add("show");
+    clearTimeout(toast._t);
+    toast._t=setTimeout(function(){toast.classList.remove("show");},1700);
+  }
+  function copy(text,done){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){done(true);},function(){done(false);});
+    }else{
+      var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.opacity="0";
+      document.body.appendChild(ta);ta.focus();ta.select();
+      var ok=false;try{ok=document.execCommand("copy");}catch(e){}
+      document.body.removeChild(ta);done(ok);
+    }
+  }
+  els.forEach(function(el){
+    el.addEventListener("click",function(e){
+      var u=el.getAttribute("data-discord");
+      if(el.tagName!=="A")e.preventDefault();
+      copy(u,function(ok){showToast(ok?("Discord copied · "+u):("Discord: "+u));});
+    });
+  });
+})();
