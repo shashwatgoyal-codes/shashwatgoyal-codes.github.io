@@ -1,0 +1,6 @@
+// Auto-ported section markup from the finalized design mockup.
+export default function Stats() {
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
+const html = "<section class=\"band\" style=\"padding-top:0\"><div class=\"inner reveal\">\n  <div class=\"statrow\">\n    <div class=\"stat glass tilt\"><svg class=\"si\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 6 2 12l6 6\"/><path d=\"m16 6 6 6-6 6\"/></svg><div class=\"n\">500+</div><div class=\"d\">DSA problems solved on LeetCode &amp; GeeksforGeeks</div></div>\n    <div class=\"stat glass tilt\"><svg class=\"si\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3 4 6v5c0 4.4 3.2 8.2 8 9.5 4.8-1.3 8-5.1 8-9.5V6l-8-3Z\"/><path d=\"m9 12 2 2 4-4\"/></svg><div class=\"n\">150+</div><div class=\"d\">Backend APIs tested end-to-end</div></div>\n    <div class=\"stat glass tilt\"><svg class=\"si\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"6\" cy=\"12\" r=\"2.4\"/><circle cx=\"18\" cy=\"6\" r=\"2.4\"/><circle cx=\"18\" cy=\"18\" r=\"2.4\"/><path d=\"M8.3 11 15.6 7M8.3 13l7.3 4\"/></svg><div class=\"n\">15+</div><div class=\"d\">Integration platforms connected \u2014 CRM, e-commerce &amp; automation</div></div>\n  </div>\n  </div></section>\n";
