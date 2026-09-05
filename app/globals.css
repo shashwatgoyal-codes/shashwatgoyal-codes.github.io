@@ -384,3 +384,10 @@
   .codecol{flex:1;min-width:0;white-space:pre;font-family:var(--mono);font-size:11.5px;line-height:1.85;overflow:hidden}
   .codecol .kw{color:var(--ck)}.codecol .str{color:var(--cs)}.codecol .prop{color:var(--cp)}.codecol .var{color:var(--cv)}.codecol .fn{color:var(--cf)}.codecol .pun{color:var(--cu)}.codecol .num{color:var(--cf)}
   @media (max-width:900px){.codewrap{gap:6vw}.codecol:nth-child(n+3){display:none}}
+
+/* Alternating (mirrored) project card layout */
+@media (min-width:901px){
+  .spot.rev .grid2{grid-template-columns:.95fr 1.05fr}
+  .spot.rev .txt{order:2}
+  .spot.rev .visual{order:1;border-left:0;border-right:1px solid var(--border)}
+}
