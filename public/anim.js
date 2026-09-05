@@ -257,3 +257,32 @@
     });
   });
 })();
+
+
+/* Contact form: AJAX submit (Formsubmit) with inline status */
+(function(){
+  var form=document.getElementById("contactform");
+  if(!form)return;
+  var statusEl=document.getElementById("cf-status");
+  var btn=form.querySelector("button[type=submit]");
+  var origBtn=btn?btn.textContent:"Send message";
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var honey=form.querySelector("[name=_honey]");
+    if(honey&&honey.value)return;
+    if(btn){btn.disabled=true;btn.textContent="Sending...";}
+    fetch(form.action,{method:"POST",body:new FormData(form),headers:{"Accept":"application/json"}})
+      .then(function(r){return r.json();})
+      .then(function(j){
+        if(j&&(j.success==="true"||j.success===true)){
+          form.reset();
+          if(statusEl){statusEl.innerHTML="Thanks \u2014 your message is on its way. I\u2019ll be in touch soon.";statusEl.style.color="var(--accent)";}
+          if(btn){btn.textContent="Sent \u2713";}
+        }else{throw new Error("fail");}
+      })
+      .catch(function(){
+        if(statusEl){statusEl.innerHTML="Something went wrong \u2014 please email <a href='mailto:shashwatgoyaloffice@gmail.com'>shashwatgoyaloffice@gmail.com</a> directly.";}
+        if(btn){btn.disabled=false;btn.textContent=origBtn;}
+      });
+  });
+})();

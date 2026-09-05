@@ -391,3 +391,16 @@
   .spot.rev .txt{order:2}
   .spot.rev .visual{order:1;border-left:0;border-right:1px solid var(--border)}
 }
+
+/* Contact form ("Let's connect") */
+.cform{display:flex;flex-direction:column;gap:14px}
+.cform .field{display:flex;flex-direction:column;gap:7px}
+.cform label{font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--faint)}
+.cform input,.cform textarea{width:100%;background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:13px 15px;color:var(--fg);font:inherit;font-size:15px;transition:border-color .2s,box-shadow .2s}
+.cform input::placeholder,.cform textarea::placeholder{color:var(--faint)}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
+.cform textarea{min-height:104px;resize:vertical;line-height:1.5}
+.cform .btn.primary{margin-top:4px}
+.cform .btn.primary:disabled{opacity:.6;cursor:default}
+.cform-alt{font-size:12.5px;color:var(--muted);margin:2px 0 0;line-height:1.55}
+.cform-alt a{color:var(--accent)}

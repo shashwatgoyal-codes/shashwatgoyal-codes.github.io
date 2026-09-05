@@ -7,6 +7,7 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import Stats from "@/components/Stats";
+import Connect from "@/components/Connect";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Experience />
         <Project />
         <Stats />
+        <Connect />
         <Contact />
       </main>
       <Script src="/anim.js" strategy="afterInteractive" />
