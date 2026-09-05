@@ -286,3 +286,15 @@
       });
   });
 })();
+
+/* Center the "Let's connect" form when its dock link is clicked */
+(function(){
+  var link=document.querySelector('.dock a[href="#connect"]');
+  var target=document.getElementById("connect");
+  if(!link||!target)return;
+  link.addEventListener("click",function(e){
+    e.preventDefault();
+    target.scrollIntoView({behavior:"smooth",block:"center"});
+    if(history.replaceState)history.replaceState(null,"","#connect");
+  });
+})();
